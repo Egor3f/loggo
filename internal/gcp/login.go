@@ -11,7 +11,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/egor3f/loggo/internal/char"
 	"github.com/egor3f/loggo/internal/util"
 )
 
@@ -187,7 +186,6 @@ func (c *callbackHandler) ServeHTTP(resp http.ResponseWriter, req *http.Request)
 	builder.WriteString(`<html><head><meta http-equiv='refresh' content='10;url=https://cloud.google.com/sdk/auth_success'></head>`)
 	builder.WriteString(`<style>.bgCol {background-color: #1a1a1a;color: #2f2e2e;}.fgCol {color: #4bcece;}</style>`)
 	builder.WriteString(`<body style="font-family: Courier; background-color: black;color: white;text-align: center"><br><h1>You can close your browser window now!</h1><h3>GCP Authentication Complete</h3><br><h2>`)
-	builder.WriteString(char.NewCanvas().WithWord(char.LoggoLogo...).PrintCanvasAsHtml())
 	builder.WriteString(`</h2><br><span style="font-weight: bold;color: white">l'oGGo:</span> <span style="color:yellow"><u>Rich Terminal User Interface for following JSON logs</u></span><br><span style="color: gray">Copyright &copy; 2022-2023 Aurelio Calegari, Egor Aristov</span><br><a href="https://github.com/egor3f/loggo">https://github.com/egor3f/loggo</a></body></html>`)
 	_, _ = resp.Write([]byte(builder.String()))
 }

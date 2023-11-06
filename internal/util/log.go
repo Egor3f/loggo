@@ -7,7 +7,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/egor3f/loggo/internal/char"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -18,7 +17,7 @@ func InitializeLogging(logFile string) {
 	}
 	log.SetOutput(file)
 	log.SetFormatter(&log.JSONFormatter{})
-	Log().Info("l'oggo Init!\n" + char.NewCanvas().WithWord(char.LoggoLogo...).PrintCanvasAsString())
+	Log().Info("l'oggo Init!")
 }
 
 func Log() *log.Entry {
