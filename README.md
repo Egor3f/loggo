@@ -1,106 +1,146 @@
-# l'oGGo: Rich Terminal User Interface Logging App
-![release](https://img.shields.io/github/v/release/aurc/loggo)
-![release workflow](https://github.com/aurc/loggo/actions/workflows/go.yml/badge.svg)
-![license](https://img.shields.io/github/license/aurc/loggo)
-![go_version](https://img.shields.io/github/go-mod/go-version/aurc/loggo)
-![downloads](https://img.shields.io/github/downloads/aurc/loggo/total)
+# Logovo: Rich Terminal User Interface Logging App
+A fork of [Loggo](https://github.com/aurc/loggo)
+
+[//]: # (![release]&#40;https://img.shields.io/github/v/release/aurc/loggo&#41;)
+
+[//]: # (![release workflow]&#40;https://github.com/aurc/loggo/actions/workflows/go.yml/badge.svg&#41;)
+![license](https://img.shields.io/github/license/Egor3f/loggo)
+![go_version](https://img.shields.io/github/go-mod/go-version/Egor3f/loggo)
+
+[//]: # (![downloads]&#40;https://img.shields.io/github/downloads/aurc/loggo/total&#41;)
 ## Introduction
 
 *For the impatient, go to [Getting Started](#getting-started)*
-<p align="center">
-<img src="img/loggo_sm.png">
-</p>
 
-l'oGGo or Log & Go is a rich Terminal User Interface app written in [golang](https://go.dev/) that harness the
-power of your terminal to digest log streams based on JSON based logs.
+Logovo or Log on Go = 👍 is a rich Terminal User Interface app written in golang that harness the
+power of your terminal to digest log streams
 
 This can be used against applications running locally, on a Kubernetes cluster (see [K8S Cheatsheet](#k8s)), GCP
 Stack Driver ([Google Logs](https://cloud.google.com/logging), see [GCP-Stream Command](#gcp-stream-command)) and many others.
 
-<img src="img/compare.png">
+some sections of readme are from upstream, to be reviewed in the future
+
+<img src="docs/img/compare.png">
 <table>
 <tr>
 <td>
-<p>Without l`oGGo</p>
-<img src="img/mov/term.gif">
+<p>Without Logovo</p>
+<img src="docs/img/term.gif">
 </td>
 <td>
-<p>With l`oGGo</p>
-<img src="img/mov/loggo.gif">
+<p>With Logovo</p>
+<img src="docs/img/loggo.gif">
 </td>
 </tr>
 </table>
 
-Loggo App leveraged [tview](https://github.com/rivo/tview/) and [tcell](https://github.com/gdamore/tcell) projects for rich Terminal User 
+Logovo leveraged [tview](https://github.com/rivo/tview/) and [tcell](https://github.com/gdamore/tcell) projects for rich Terminal User 
 Interface (TUI).
 
 ## Getting Started
 
-### macOS/Linux with Homebrew/Linuxbrew:
-The easiest way is to utilise [Homebrew](https://brew.sh/) **(macOS)** or [LinuxBrew](https://docs.brew.sh/Homebrew-on-Linux) **(Linux)**
-package management system. Once installed simply issue the following command:
+[//]: # ()
+[//]: # (### macOS/Linux with Homebrew/Linuxbrew:)
 
-````
-brew tap aurc/loggo
-brew install aurc/loggo/loggo
-````
+[//]: # (The easiest way is to utilise [Homebrew]&#40;https://brew.sh/&#41; **&#40;macOS&#41;** or [LinuxBrew]&#40;https://docs.brew.sh/Homebrew-on-Linux&#41; **&#40;Linux&#41;**)
 
-To update:
-````
-brew upgrade aurc/loggo/loggo
-````
+[//]: # (package management system. Once installed simply issue the following command:)
 
-### All Systems
+[//]: # ()
+[//]: # (````)
 
-### Install with Go
-Assuming you have [go](https://go.dev/) installed in your system (best choice if not homebrew) and bin packages
-are in your `PATH`, just run:
+[//]: # (brew tap aurc/loggo)
 
-````
-go install github.com/aurc/loggo@latest
-````
+[//]: # (brew install aurc/loggo/loggo)
+
+[//]: # (````)
+
+[//]: # ()
+[//]: # (To update:)
+
+[//]: # (````)
+
+[//]: # (brew upgrade aurc/loggo/loggo)
+
+[//]: # (````)
+
+[//]: # ()
+[//]: # (### All Systems)
+
+[//]: # ()
+[//]: # (### Install with Go)
+
+[//]: # (Assuming you have [go]&#40;https://go.dev/&#41; installed in your system &#40;best choice if not homebrew&#41; and bin packages)
+
+[//]: # (are in your `PATH`, just run:)
+
+[//]: # ()
+[//]: # (````)
+
+[//]: # (go install github.com/aurc/loggo@latest)
+
+[//]: # (````)
 
 ### Build from Source:
 Including **macOS**, build from source. 
 Pre-Reqs:
-- [Golang](https://go.dev/) v1.8+
-- Checkout the project from [https://github.com/aurc/loggo/](https://github.com/aurc/loggo/)
+- [Golang](https://go.dev/) v1.21+
+- Checkout the project from [https://github.com/Egor3f/loggo/](https://github.com/Egor3f/loggo/)
 
 ````
-go build -o loggo
+go build -o logovo
 ````
-> Install the `loggo` binary in your system's binary bucket or add `loggo` binary to your
-path.
+> Install the `logovo` binary in your system's binary bucket or add `logovo` binary to your path.
 
-### Download Pre-Compiled binary
+[//]: # (### Download Pre-Compiled binary)
 
-This option might be suitable for you if you don't have Home/Linux-Brew or golang 
-readly available for you. In this case you can download a pre-compiled exectuable binary
-for the following platforms:
+[//]: # ()
+[//]: # (This option might be suitable for you if you don't have Home/Linux-Brew or golang )
 
-Latest Release [pre-build binaries here](https://github.com/aurc/loggo/releases/latest)!
+[//]: # (readly available for you. In this case you can download a pre-compiled exectuable binary)
 
-- **Windows 11**:
-    
-   Download a `tar.gz` file from [pre-build binaries](https://github.com/aurc/loggo/releases/latest) that match your platform:
-   - Most of PCs will be `amd64`, so file format will be like `loggo_x.y.z_windows_amd64.tar.gz`. Note: *If you own a Surface Pro, or
-virtualised windows on a Mac M series, you'll probably want to grab the `arm64` version.*
-   - Open a terminal window (`cmd.exe`) and issue the following command in the folder you downloaded the file:
-     ````
-     tar -xvzf loggo_x.y.z_windows_amd64.tar.gz
-     ````
-   - A file `loggo.exe` will be extracted to the current folder.
-   - You can place this file in a directory that's on your %PATH% so the command `loggo` is accessible from anywhere.
-   - 
-- **Linux** (both arm64 and amd64 plat):
-  - ubuntu:  `tar.gz` file from releases (e.g. loggo_vx.y.z_linux_<plat>.tar.gz)
-  - debian:  `*.deb` file from releases
-  - redhat:  `*.rpm` file from releases
-  - alpine:  `*.apk` file from releases
+[//]: # (for the following platforms:)
 
-## Using l'oGGo
+[//]: # ()
+[//]: # (Latest Release [pre-build binaries here]&#40;https://github.com/aurc/loggo/releases/latest&#41;!)
 
-Loggo can be used to stream parsed logs from a persisted file and from a 
+[//]: # ()
+[//]: # (- **Windows 11**:)
+
+[//]: # (    )
+[//]: # (   Download a `tar.gz` file from [pre-build binaries]&#40;https://github.com/aurc/loggo/releases/latest&#41; that match your platform:)
+
+[//]: # (   - Most of PCs will be `amd64`, so file format will be like `loggo_x.y.z_windows_amd64.tar.gz`. Note: *If you own a Surface Pro, or)
+
+[//]: # (virtualised windows on a Mac M series, you'll probably want to grab the `arm64` version.*)
+
+[//]: # (   - Open a terminal window &#40;`cmd.exe`&#41; and issue the following command in the folder you downloaded the file:)
+
+[//]: # (     ````)
+
+[//]: # (     tar -xvzf loggo_x.y.z_windows_amd64.tar.gz)
+
+[//]: # (     ````)
+
+[//]: # (   - A file `loggo.exe` will be extracted to the current folder.)
+
+[//]: # (   - You can place this file in a directory that's on your %PATH% so the command `loggo` is accessible from anywhere.)
+
+[//]: # (   - )
+
+[//]: # (- **Linux** &#40;both arm64 and amd64 plat&#41;:)
+
+[//]: # (  - ubuntu:  `tar.gz` file from releases &#40;e.g. loggo_vx.y.z_linux_<plat>.tar.gz&#41;)
+
+[//]: # (  - debian:  `*.deb` file from releases)
+
+[//]: # (  - redhat:  `*.rpm` file from releases)
+
+[//]: # (  - alpine:  `*.apk` file from releases)
+
+## Using Logovo
+
+Logovo can be used to stream parsed logs from a persisted file and from a 
 piped input and also provides a tool for creating log templates.
 
 ### Some Features
@@ -108,68 +148,68 @@ piped input and also provides a tool for creating log templates.
   - Main log stream remains unaffected regardless of the source (gcp, pipe, file, etc...)
   - Display only log entries that match search/filter criteria
   - Convenient key finder and operators for filter expression crafting
-  ![](img/loggo_filter.png)
+  ![](docs/img/loggo_filter.png)
 - Drill down onto each log entry
-  ![](img/log_entry.png)
+  ![](docs/img/log_entry.png)
 - Copy Log-Entry to Clipboard
   - Note: Linux requires X11 dev package. For instance, install `libx11-dev` or `xorg-dev` or `libX11-devel` to access X window system.
-    ![](img/copy_clipboard.png)
+    ![](docs/img/copy_clipboard.png)
 - Navigate Left-Right-Up-Down on Large Grids
   - Select a Line
   - Use the arrow keys (`↓ ↑ ← →`)
-    ![](img/mov/nav_right_left.gif)
+    ![](docs/img/nav_right_left.gif)
 - Select on screen text
   - Horizontally based selection (`Alt` + Mouse `Click/Drag`)
   - Block/Vertical based selection (`Cmd`+`Opt`+ Mouse `Click/Drag` - macOS)
   - Copy the selected text to clipboard (`Cmd`+`C` - macOS/`Ctrl`+`C` - other systems)
-    ![](img/mov/selection.gif)
+    ![](docs/img/selection.gif)
 - Configure Rendering Templates:
-  ![](img/render_template.png)
+  ![](docs/img/render_template.png)
 - Fine Tune how columns are displayed (Template):
   - Note that single Value Matches are REGEX expressions.
-    ![](img/how_to_display.png)
+    ![](docs/img/how_to_display.png)
 
 ### `help` Command
 
-To gain fine grained insight of each `loggo` command params, use
+To gain fine grained insight of each `logovo` command params, use
 the `help` command, e.g.:
 ````
-loggo help
-loggo help stream
-loggo help template
-loggo help gcp-stream
+logovo help
+logovo help stream
+logovo help template
+logovo help gcp-stream
 ````
 
 ### `stream` Command
 
-![](img/loggo_log.png)
+![](docs/img/loggo_log.png)
 
 **From File:**
 ````
-loggo stream --file <my file>
+logovo stream --file <my file>
 ````
 *With Template:*
 ````
-loggo stream --file <my file> --template <my template yaml>
+logovo stream --file <my file> --template <my template yaml>
 ````
 
 **From Pipe:**
 ````
-tail -f <my file> | loggo stream
+tail -f <my file> | logovo stream
 ````
 Kubernetes example (See [K8S Cheatsheet](#k8s-cheatsheet))
 ````
-kubectl logs -f -n <namespace> <pod> | loggo stream
+kubectl logs -f -n <namespace> <pod> | logovo stream
 ````
 *With Template:*
 ````
-tail -f <my file> | loggo stream --template <my template yaml>
+tail -f <my file> | logovo stream --template <my template yaml>
 ````
 
 Note that you can pipe to anything that produces an output to the `stdin`.
 
 ### `gcp-stream` Command 
-l`oGGo natively supports GCP Logging but in order to use this feature, there are a few caveats:
+Logovo natively supports GCP Logging but in order to use this feature, there are a few caveats:
 - Your personal account has the required permissions to access the logging resources.
 
 
@@ -178,7 +218,7 @@ commands (e.g. chaining K8S output) use the `stream` command instead.
 
 Example:
 ````
-loggo gcp-stream \
+logovo gcp-stream \
     --filter 'resource.labels.namespace_name="some-namespace" resource.labels.container_name="some-container"' \
     --project some-project-ID \
     --from 10m
@@ -186,7 +226,7 @@ loggo gcp-stream \
 Where:
 ````
 Usage:
-  loggo gcp-stream [flags]
+  logovo gcp-stream [flags]
 
 Flags:
   -p, --project string       GCP Project ID (required)
@@ -220,7 +260,7 @@ For convenience, you can build a list of frequently used command parameters/flag
 having to rewrite lengthy list of parameters, for example:
 
 ````
-loggo gcp-stream \
+logovo gcp-stream \
     --filter 'resource.labels.namespace_name="some-namespace" resource.labels.container_name="some-container"' \
     --project some-project-ID \
     --from 10m
@@ -230,20 +270,20 @@ loggo gcp-stream \
 
 Then you simply issue:
 ````
-loggo gcp-stream --params-load mySavedParams1
+logovo gcp-stream --params-load mySavedParams1
 ````
 
 If you want to review all saved params buckets, issue the following command:
 
 ````
-loggo gcp-stream --params-list
+logovo gcp-stream --params-list
 ````
 
 Additionally, you might want to overwrite some parameters. The example command uses `--from 10m`, and
 say you want to `tail` instead:
 
 ````
-loggo gcp-stream --params-load mySavedParams1 --from tail
+logovo gcp-stream --params-load mySavedParams1 --from tail
 ````
 
 Any additional parameter provided will overwrite the loaded params at runtime.
@@ -255,14 +295,14 @@ templates prior using the loggo command.
 
 **Blank Canvas:**
 
-![](img/mov/template.gif)
+![](docs/img/template.gif)
 ````
-loggo template
+logovo template
 ````
 
 **Edit Existing Template:**
 ````
-loggo template --file <my template yaml>
+logovo template --file <my template yaml>
 ````
 
 ## K8S Cheatsheet
@@ -271,22 +311,15 @@ Combined logs of all pods of an application.
 ````
 kubectl -n <some-namespace> logs -f deployment/<application-name> \
   --all-containers=true \
-  --since=10m | loggo stream
+  --since=10m | logovo stream
 ````
 
 Logs of a pod.
 ````
-kubectl logs -f -n <some-namespace> <pod-name> | loggo stream
+kubectl logs -f -n <some-namespace> <pod-name> | logovo stream
 ````
-
-## Current Limitations
-
-Most of the items listed here are slated for development in the near future,
-prior the first release.
-- Browse/Load new log templates on the fly.
-- Create template with keys whose name contains `/` as it uses slashes to navigate to nested json branches.
 
 ## Feedback
 
 Please let us know your **thoughts**, **feature requests** and **bug reports**! Use the issues report
-link here: https://github.com/aurc/loggo/issues
+link here: https://github.com/Egor3f/loggo/issues

@@ -1,9 +1,9 @@
 package loggo
 
 import (
-	"github.com/aurc/loggo/internal/config"
-	"github.com/aurc/loggo/internal/reader"
-	"github.com/aurc/loggo/internal/util"
+	"github.com/egor3f/loggo/internal/config"
+	"github.com/egor3f/loggo/internal/reader"
+	"github.com/egor3f/loggo/internal/util"
 	"github.com/gdamore/tcell/v2"
 	"github.com/rivo/tview"
 )

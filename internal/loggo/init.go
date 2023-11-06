@@ -4,7 +4,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/aurc/loggo/internal/util"
+	"github.com/egor3f/loggo/internal/util"
 )
 
 const (

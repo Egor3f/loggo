@@ -5,12 +5,12 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/aurc/loggo/internal/util"
+	"github.com/egor3f/loggo/internal/util"
 
-	"github.com/aurc/loggo/internal/gcp"
+	"github.com/egor3f/loggo/internal/gcp"
 
-	"github.com/aurc/loggo/internal/loggo"
-	"github.com/aurc/loggo/internal/reader"
+	"github.com/egor3f/loggo/internal/loggo"
+	"github.com/egor3f/loggo/internal/reader"
 	"github.com/spf13/cobra"
 )
 

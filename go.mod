@@ -1,4 +1,4 @@
-module github.com/aurc/loggo
+module github.com/egor3f/loggo
 
 go 1.21
 

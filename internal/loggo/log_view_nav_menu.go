@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/aurc/loggo/internal/color"
+	"github.com/egor3f/loggo/internal/color"
 	"github.com/gdamore/tcell/v2"
 	"github.com/rivo/tview"
 )

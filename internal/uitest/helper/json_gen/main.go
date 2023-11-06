@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/aurc/loggo/internal/uitest/helper"
+	"github.com/egor3f/loggo/internal/uitest/helper"
 	"github.com/google/uuid"
 )
 

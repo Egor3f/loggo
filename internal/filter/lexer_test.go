@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/aurc/loggo/internal/config"
+	"github.com/egor3f/loggo/internal/config"
 	"github.com/stretchr/testify/assert"
 )
 

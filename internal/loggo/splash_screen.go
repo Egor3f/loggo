@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aurc/loggo/internal/char"
+	"github.com/egor3f/loggo/internal/char"
 	"github.com/gdamore/tcell/v2"
 	"github.com/rivo/tview"
 )
@@ -36,9 +36,9 @@ func (t *SplashScreen) makeUIComponents() {
 	t.titleView = tview.NewTextView().SetDynamicColors(true).SetTextAlign(tview.AlignCenter)
 	t.subtitleView = tview.NewTextView().SetDynamicColors(true).SetTextAlign(tview.AlignCenter)
 	t.subtitleView.SetText(fmt.Sprintf(`
-[white:black:b]l'oGGo %s[::-]: [yellow::u]Rich Terminal User Interface for following JSON logs
-[gray::-]Copyright © 2022 Aurelio Calegari, et al.
-[lightgray::u]https://github.com/aurc/loggo
+[white:black:b]Logovo %s[::-]: [yellow::u]Rich Terminal User Interface for following JSON logs
+[gray::-]Copyright © 2022-2023 Aurelio Calegari, Egor Aristov
+[lightgray::u]https://github.com/egor3f/loggo
 `, BuildVersion)).SetBackgroundColor(tcell.ColorBlack)
 }
 

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/aurc/loggo/internal/color"
-	"github.com/aurc/loggo/internal/loggo"
+	"github.com/egor3f/loggo/internal/color"
+	"github.com/egor3f/loggo/internal/loggo"
 	"github.com/gdamore/tcell/v2"
 	"github.com/rivo/tview"
 )

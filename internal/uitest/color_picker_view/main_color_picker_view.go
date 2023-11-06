@@ -1,6 +1,6 @@
 package main
 
-import "github.com/aurc/loggo/internal/loggo"
+import "github.com/egor3f/loggo/internal/loggo"
 
 func main() {
 	app := loggo.NewApp("")

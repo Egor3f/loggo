@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/aurc/loggo/internal/reader"
+	"github.com/egor3f/loggo/internal/reader"
 )
 
 func main() {

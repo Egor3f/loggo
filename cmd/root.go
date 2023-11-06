@@ -3,7 +3,7 @@ package cmd
 import (
 	"os"
 
-	"github.com/aurc/loggo/internal/loggo"
+	"github.com/egor3f/loggo/internal/loggo"
 	"github.com/spf13/cobra"
 )
 
@@ -11,7 +11,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "loggo",
 	Short: "Stream json logs as rich TUI",
-	Long: `l'oGGo provides a rich Terminal User Interface for streaming json based
+	Long: `Logovo provides a rich Terminal User Interface for streaming json based
 logs and a toolset to assist you tailoring the display format.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:

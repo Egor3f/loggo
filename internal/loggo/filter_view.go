@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/aurc/loggo/internal/char"
+	"github.com/egor3f/loggo/internal/char"
 
-	"github.com/aurc/loggo/internal/filter"
+	"github.com/egor3f/loggo/internal/filter"
 
-	"github.com/aurc/loggo/internal/color"
+	"github.com/egor3f/loggo/internal/color"
 	"github.com/gdamore/tcell/v2"
 	"github.com/rivo/tview"
 )

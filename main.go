@@ -1,6 +1,6 @@
 package main
 
-import "github.com/aurc/loggo/cmd"
+import "github.com/egor3f/loggo/cmd"
 
 var version string
 

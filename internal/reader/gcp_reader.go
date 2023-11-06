@@ -11,9 +11,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aurc/loggo/internal/util"
+	"github.com/egor3f/loggo/internal/util"
 
-	"github.com/aurc/loggo/internal/gcp"
+	"github.com/egor3f/loggo/internal/gcp"
 
 	logging "cloud.google.com/go/logging/apiv2"
 	"github.com/rivo/tview"

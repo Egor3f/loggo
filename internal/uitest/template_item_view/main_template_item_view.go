@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/aurc/loggo/internal/config"
-	"github.com/aurc/loggo/internal/loggo"
+	"github.com/egor3f/loggo/internal/config"
+	"github.com/egor3f/loggo/internal/loggo"
 )
 
 func main() {

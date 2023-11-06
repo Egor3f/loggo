@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"github.com/aurc/loggo/internal/config"
-	"github.com/aurc/loggo/internal/loggo"
-	"github.com/aurc/loggo/internal/util"
+	"github.com/egor3f/loggo/internal/config"
+	"github.com/egor3f/loggo/internal/loggo"
+	"github.com/egor3f/loggo/internal/util"
 	"github.com/spf13/cobra"
 )
 

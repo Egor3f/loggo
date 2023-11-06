@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/aurc/loggo/internal/loggo"
+	"github.com/egor3f/loggo/internal/loggo"
 )
 
 func main() {

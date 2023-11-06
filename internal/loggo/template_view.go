@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aurc/loggo/internal/color"
-	"github.com/aurc/loggo/internal/config"
+	"github.com/egor3f/loggo/internal/color"
+	"github.com/egor3f/loggo/internal/config"
 	"github.com/gdamore/tcell/v2"
 	"github.com/rivo/tview"
 )

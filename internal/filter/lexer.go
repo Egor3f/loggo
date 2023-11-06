@@ -7,7 +7,7 @@ import (
 
 	"github.com/alecthomas/participle/v2"
 	"github.com/alecthomas/participle/v2/lexer"
-	"github.com/aurc/loggo/internal/config"
+	"github.com/egor3f/loggo/internal/config"
 )
 
 type LogicalOperator int

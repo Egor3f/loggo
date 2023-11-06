@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aurc/loggo/internal/config"
+	"github.com/egor3f/loggo/internal/config"
 )
 
 type Operation string

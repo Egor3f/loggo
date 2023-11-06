@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/atotto/clipboard"
-	"github.com/aurc/loggo/internal/color"
-	"github.com/aurc/loggo/internal/search"
+	"github.com/egor3f/loggo/internal/color"
+	"github.com/egor3f/loggo/internal/search"
 	"github.com/gdamore/tcell/v2"
 	"github.com/rivo/tview"
 )

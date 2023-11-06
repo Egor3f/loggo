@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/aurc/loggo/internal/loggo"
-	"github.com/aurc/loggo/internal/reader"
+	"github.com/egor3f/loggo/internal/loggo"
+	"github.com/egor3f/loggo/internal/reader"
 	"github.com/spf13/cobra"
 )
 

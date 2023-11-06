@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aurc/loggo/internal/char"
+	"github.com/egor3f/loggo/internal/char"
 	log "github.com/sirupsen/logrus"
 )
 
