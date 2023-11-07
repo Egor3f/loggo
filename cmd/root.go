@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/egor3f/loggo/internal/reader"
 	"os"
 
 	"github.com/egor3f/loggo/internal/loggo"
@@ -10,12 +11,21 @@ import (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "loggo",
-	Short: "Stream json logs as rich TUI",
-	Long: `Logovo provides a rich Terminal User Interface for streaming json based
-logs and a toolset to assist you tailoring the display format.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
+	Short: "Continuously stream log input source",
+	Long: `Continuously stream log entries from an input stream such
+as the standard input (through pipe) or a input file. Note that
+if it's reading from a file, it automatically detects file 
+rotation and continue to stream. For example:
+
+	loggo --file <file-path>
+	<some arbitrary input> | loggo`,
+	Run: func(cmd *cobra.Command, args []string) {
+		fileName := cmd.Flag("file").Value.String()
+		templateFile := cmd.Flag("template").Value.String()
+		reader := reader.MakeReader(fileName, nil)
+		app := loggo.NewLoggoApp(reader, templateFile)
+		app.Run()
+	},
 }
 
 // Initiate adds all child commands to the root command and sets flags appropriately.
@@ -29,13 +39,8 @@ func Initiate() {
 }
 
 func init() {
-	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
-
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.loggo.yaml)")
-
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	//rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	rootCmd.Flags().
+		StringP("file", "f", "", "Input Log File")
+	rootCmd.Flags().
+		StringP("template", "t", "", "Rendering Template")
 }
